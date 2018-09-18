@@ -1,0 +1,2 @@
+mkdir views
+mkdir public

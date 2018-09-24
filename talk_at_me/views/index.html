@@ -3,14 +3,32 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <style>
+      #link-button {
+        visibility: hidden;
+      }
+      #reload-button{
+        visibility: hidden;
+      }
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    </style>
        <!-- data-main attribute tells require.js to load
              scripts/main.js after require.js loads. -->
     <!-- <script data-main="scripts/script" src="scripts/require.js"></script> -->
-  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.min.js"></script>
   </head>
     
   <body>
+    <!-- <div id="question-div">what's on your mind??</div> -->
+    <div> <button id = "my-button">tell me a word or two<div>
+    <div> <button id = "link-button"> click me </div>
     <script src="scripts/script.js"></script>
 
+
+    <div> <button id = "reload-button"> did it break? </div>
   </body>
 </html>

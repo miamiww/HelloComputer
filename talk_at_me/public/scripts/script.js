@@ -1,9 +1,21 @@
 console.log("hi")
 const SpeechRecognition = webkitSpeechRecognition;
-import config from 'config.js';
+// import config from 'config.js';
 
+var socket = io.connect(window.location.origin);
+var btn;
 
-const giphyAPIKey = config.gifAPIkey
+socket.on('timesocket', function(data) {
+    console.log(data);
+    document.querySelector('#link-button').setAttribute("style","visibility: visible");
+    document.querySelector('#link-button').onclick = () => {
+      window.open(data);
+    };
+    document.querySelector('#reload-button').setAttribute("style","visibility: visible");
+    document.querySelector('#reload-button').onclick = () => {
+      location.reload();
+    };
+});
 
 
 const getSpeech = () => {
@@ -16,7 +28,8 @@ const getSpeech = () => {
       const speechResult = event.results[0][0].transcript;
       console.log('result: ' + speechResult);
       console.log('confidence: ' + event.results[0][0].confidence);
-      getGif(speechResult);
+      urlResult = "www." + speechResult.replace(/ /g,'') + ".com";
+      pushToSocket(urlResult);
     }
     recognition.onend = () => {
       console.log('it is over');
@@ -31,17 +44,13 @@ const getSpeech = () => {
 }
 
 
-const getGif = phrase => {
-  let url = `http://api.giphy.com/v1/gifs/random?api_key=${giphyAPIKey}&tag=${phrase}`
-  console.log(url);
-  fetch(url, {mode: "cors"}).then(response => response.json()).then(result => {let imgURL = result.data.image_url;   console.log(imgURL); document.querySelector('#the-gif').src = imgURL});
-
+const pushToSocket = thephrase => {
+  socket.emit('theurl',thephrase);
+  btn = document.createElement("BUTTON");
 }
 
 document.querySelector('#my-button').onclick = () => {
     console.log('click');
     getSpeech();
     // getGif();
-
-
 }

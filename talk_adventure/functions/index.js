@@ -91,4 +91,4 @@ app.intent('quit', (conv) => {
 
 
 //fix this
-exports.Experiment = functions.https.onRequest(app);
+exports.adventurebot = functions.https.onRequest(app);

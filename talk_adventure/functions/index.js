@@ -1,6 +1,7 @@
 const functions = require('firebase-functions');
 const random = require("random-js")();
-
+const {dialogflow} = require('actions-on-google');
+const app = dialogflow();
 // // Create and Deploy Your First Cloud Functions
 // // https://firebase.google.com/docs/functions/write-firebase-functions
 //
@@ -10,7 +11,7 @@ const random = require("random-js")();
 
 // set defaults
 // note to self: this could be better handled with an object
-var room = "End of Road";
+var myroom = "End of Road";
 var value = random.integer(1,20);
 var items = [];
 var roomItems = [];
@@ -78,14 +79,19 @@ app.intent('take', (conv, params) => {
 });
 
 app.intent('move', (conv, params) => {
-    room = moveR(room,params.direction);
-    checkRoom(room);
+    myroom = moveR(myroom,params.direction);
+    checkRoom(myroom);
+    console.log(params.direction)
     conv.ask(`You have moved ${params.direction}. Try looking around.`)
 });
 
 
 app.intent('quit', (conv) => {
-
+    myroom = "End of Road";
+    value = random.integer(1,20);
+    items = [];
+    roomItems = [];
+    description = "You are standing at the end of a road before a small brick building. Around you is a forest. A small stream flows out of the building and down a gully.";
     conv.close("Goodbye");
 })
 

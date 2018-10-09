@@ -78,9 +78,9 @@ app.intent('take', (conv, params) => {
 });
 
 app.intent('move', (conv, params) => {
-
     room = moveR(room,params.direction);
-    roomItems = [];
+    checkRoom(room);
+    conv.ask(`You have moved ${params.direction}. Try looking around.`)
 });
 
 

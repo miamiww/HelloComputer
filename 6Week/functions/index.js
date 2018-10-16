@@ -5,6 +5,8 @@ const Sentiment = require('sentiment');
 const sentiment = new Sentiment();
 const fs = require('fs');
 const _ = require('lodash');
+
+
 const db = admin.firestore();
 
 admin.initializeApp(functions.config().firebase);
@@ -28,7 +30,7 @@ app.intent('Default Welcome Intent', conv => {
 app.intent('get fortune', (conv, params) => {
     // convs.contexts.set('dreams question', 5);
     conv.ask(`Hello, ${params.name}, what did you dream about last night?`);
-
+    let 
 });
 
 app.intent('dreams', (conv) => {

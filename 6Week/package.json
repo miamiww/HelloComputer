@@ -1,0 +1,14 @@
+{
+  "name": "hellocompnotes",
+  "version": "0.5.0",
+  "description": "notes from week 4 of hello computer",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "alden jones",
+  "license": "ISC",
+  "dependencies": {
+    "firebase-admin": "^6.0.0"
+  }
+}

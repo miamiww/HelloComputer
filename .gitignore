@@ -2,6 +2,7 @@ ITP-hello-computer-f18
 config.js
 mystery-animal
 .DS_Store
+env
 
 # Logs
 logs

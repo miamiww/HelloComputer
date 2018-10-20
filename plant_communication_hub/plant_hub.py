@@ -8,7 +8,7 @@ import serial
 import os
 import threading
 
-plant_chat = ['']
+plant_chat = ['gregorios are alll here']
 plant_response = ['hello human my good friend you are here and speaking to me again it is so good when I hear your voice I wish to cry out in joy here I am crying out in JOY I AM SO HAPPY YES IT IS GOOD TO BE HERE A PLANT IN THIS HOME']
 
 
@@ -27,12 +27,13 @@ def main():
 #            if reading == '!':
 #                break
 #        ser.write(b'?')
+        print('waiting for button')
+        button.wait_for_press()
         print('Listening...')
         text = recognizer.recognize()
         if text is None:
-            aiy.audio.say('please speak')
+            # aiy.audio.say('')
             print('Sorry, I did not hear you.')
-            ser.flush()
         else:
             print('You said "', text, '"')
             # if 'turn on the light' in text:
@@ -40,12 +41,12 @@ def main():
             #     ser.flush()
             # elif 'turn off the light' in text:
             #     led.set_state(aiy.voicehat.LED.OFF)
-            elif 'hello' in text:
-                aiy.audio.say(random.choice(fortunes))
-                ser.flush()
+            if 'hello' in text:
+                aiy.audio.say(random.choice(plant_response))
+            elif 'goodbye' in text:
+                break
             else:
-                aiy.audio.say('you do not want to know')
-                ser.flush()
+                aiy.audio.say('yes it is me the plant')
 
 
 if __name__ == '__main__':

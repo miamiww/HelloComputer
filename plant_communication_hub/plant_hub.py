@@ -9,7 +9,7 @@ import os
 import threading
 
 plant_chat = ['gregorios are alll here']
-plant_response = ['hello human my good friend you are here and speaking to me again it is so good when I hear your voice I wish to cry out in joy here I am crying out in JOY I AM SO HAPPY YES IT IS GOOD TO BE HERE A PLANT IN THIS HOME']
+plant_response = ['hello human my good friend you are here and speaking to me again it is so good when I hear your voice I wish to cry out in joy here I am crying out in JOY I AM SO HAPPY YES IT IS good TO BE HERE A plant IN THIS HOME']
 
 
 def main():
@@ -46,7 +46,7 @@ def main():
             elif 'goodbye' in text:
                 break
             else:
-                aiy.audio.say('yes it is me the plant')
+                aiy.audio.say('yes it is plant')
 
 
 if __name__ == '__main__':

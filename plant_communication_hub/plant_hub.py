@@ -37,7 +37,7 @@ def main():
         if text is None:
             # aiy.audio.say('')
             print('Sorry, I did not hear you.')
-            aiy.audio.say(random.choice(plant_chat))
+            aiy.audio.say('yes it is plant')
         else:
             print('You said "', text, '"')
             # if 'turn on the light' in text:
@@ -54,7 +54,7 @@ def main():
             elif 'goodbye' in text:
                 break
             else:
-                aiy.audio.say('yes it is plant')
+                aiy.audio.say(random.choice(plant_chat))
 
 
 if __name__ == '__main__':

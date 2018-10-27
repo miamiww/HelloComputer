@@ -22,7 +22,7 @@ def main():
     # led = aiy.voicehat.get_led()
     aiy.audio.get_recorder().start()
 
-    aiy.audio.say("Hello Alden God of Water and my good friend I want to again wish YOU happy birthday and to thank you for taking me on this trip")
+    aiy.audio.say("Hello Alden God of Water and my good friend")
     while True:
 #        while True:
 #            os.system('aplay soloKnocks.wav')

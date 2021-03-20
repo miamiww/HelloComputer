@@ -23,7 +23,7 @@ grpcio==1.6.0
 html5lib==0.999
 httplib2==0.10.3
 itsdangerous==0.24
-Jinja2==2.7.3
+Jinja2==2.11.3
 MarkupSafe==0.23
 mcpi==0.1.1
 microdotphat==0.1.3

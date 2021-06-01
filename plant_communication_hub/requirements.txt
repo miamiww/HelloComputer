@@ -72,7 +72,7 @@ thonny==2.1.10
 touchphat==0.0.1
 twython==3.1.2
 ufw==0.33.post2
-urllib3==1.9.1
+urllib3==1.26.5
 virtualenv==15.1.0
 Wave==0.0.2
 Werkzeug==0.9.6

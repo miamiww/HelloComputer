@@ -10,7 +10,7 @@
   "author": "alden jones",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.3",
+    "express": "^4.17.3",
     "socket.io": "^2.1.1",
     "wayback-machine": "^0.2.1"
   }

@@ -9,6 +9,6 @@
   "author": "alden jones",
   "license": "ISC",
   "dependencies": {
-    "firebase-admin": "^6.0.0"
+    "firebase-admin": "^11.4.1"
   }
 }
